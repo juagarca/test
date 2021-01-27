@@ -20,15 +20,26 @@ describe Calculator do
   describe '#substract' do
     calculator = Calculator.new
     it 'returns the substract of a number a to number b, when result is > 0' do
-      expect(calculator.substract(5)).to eql(10)
+      expect(calculator.substract(5, 2)).to eql(3)
     end
 
     it 'returns 0 when the substract of a number a to number b is 0' do
-      expect(calculator.substract(0)).to eql(0)
+      expect(calculator.substract(2, 2)).to eql(0)
     end
 
     it 'returns 0 when the substract of a number a to number b is < 0' do
-      expect(calculator.substract(-6)).to eql(0)
+      expect(calculator.substract(2, 5)).to eql(0)
+    end
+  end
+
+  describe '#add' do
+    calculator = Calculator.new
+    it 'returns the sum of a number a to number b' do
+      expect(calculator.add(5, 2)).to eql(7)
+    end
+
+    it 'returns 0 when the sum of a number a to number b is < 0' do
+      expect(calculator.add(-5, 2)).to eql(0)
     end
   end
 end
