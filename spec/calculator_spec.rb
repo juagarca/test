@@ -16,4 +16,19 @@ describe Calculator do
       expect(calculator.duplicate(-6)).to eql(0)
     end
   end
+
+  describe '#substract' do
+    calculator = Calculator.new
+    it 'returns the substract of a number a to number b, when result is > 0' do
+      expect(calculator.substract(5)).to eql(10)
+    end
+
+    it 'returns 0 when the substract of a number a to number b is 0' do
+      expect(calculator.substract(0)).to eql(0)
+    end
+
+    it 'returns 0 when the substract of a number a to number b is < 0' do
+      expect(calculator.substract(-6)).to eql(0)
+    end
+  end
 end
